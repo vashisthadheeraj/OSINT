@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker's OSINT</title>
+<link rel="stylesheet" href="styles.css">
+<!-- Add Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  body {
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .container {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    background-image: url('hacker-image.jpg'); /* Replace 'hacker-image.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: white; /* Adjust text color for better visibility */
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for buttons */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .osint-btn {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    min-width: 200px;
+    text-align: center;
+  }
+
+  .osint-btn i {
+    margin-right: 5px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+  }
+  
+  .footer-item {
+    color: white;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hacker's OSINT</h1>
+        <div class="buttons">
+          <div class="row">
+            <button id="button1" class="osint-btn" data-source="ip-lookup.html"><i class="fas fa-map-marker-alt"></i> IP Location Finder</button>
+            <button id="button2" class="osint-btn" data-source="whois-lookup.html"><i class="fas fa-search"></i> WhoIs Lookup</button>
+            <button id="button3" class="osint-btn" data-source="subdomain-finder.html"><i class="fas fa-sitemap"></i> Subdomain Finder</button>
+            <button id="button4" class="osint-btn" data-source="shodan-lookup.html"><i class="fas fa-server"></i> Shodan Lookup</button>
+            <button id="button5" class="osint-btn" data-source="dns_lookup.html"><i class="fas fa-globe"></i> DNS Lookup</button>
+          </div>
+          <div class="row">
+            <button id="button6" class="osint-btn" data-source="phone-lookup.html"><i class="fas fa-phone"></i> Phone No Lookup</button>
+            <button id="button7" class="osint-btn" data-source="mac-lookup.html"><i class="fas fa-mobile-alt"></i> MAC Address Lookup</button>
+            <button id="button8" class="osint-btn" data-source="email-verification.html"><i class="fas fa-envelope"></i> Email Verification</button>
+            <button id="button9" class="osint-btn" data-source="email-finder.html"><i class="fas fa-at"></i> Email Finder</button>
+            <button id="button10" class="osint-btn" data-source="short-link-opner.html"><i class="fas fa-link"></i> Short Link Opener</button>
+          </div>
+          <div class="row">
+            <button id="button11" class="osint-btn" data-source="tech-lookup.html"><i class="fas fa-laptop"></i> Technology Lookup</button>
+            <!-- <button id="button12" class="osint-btn" data-source="https://source12.com"><i class="fas fa-archive"></i> Wayback URLs</button> -->
+            <!-- <button id="button13" class="osint-btn" data-source="https://source13.com"><i class="fas fa-cloud"></i> S3 Bucket Finder</button> -->
+            <button id="button14" class="osint-btn" data-source="portscanning.html"><i class="fas fa-network-wired"></i> Port Scanning</button>
+            <!-- <button id="button15" class="osint-btn" data-source="https://source15.com"><i class="fas fa-lock"></i> Data Breach Lookup</button> -->
+          </div>
+        </div>
+        
+        
+      </div>
+      
+<!-- <div class="footer">
+  <div class="footer-item" onclick="window.location.href='link-to-sectech-profile'">Powered By SecTech Creation</div>
+
+  <div class="footer-item" onclick="window.location.href='link-to-dheeraj-profile'">Developed by Dheeraj          </div>
+</div> -->
+
+
+
+<audio id="hack-sound" src="audio.mp3" preload="auto"></audio>
+
+<script>
+  // Get reference to the audio element
+  var audio = document.getElementById("hack-sound");
+
+  // Get references to the buttons
+  var buttons = document.querySelectorAll(".osint-btn");
+
+  // Add click event listeners to the buttons
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      audio.currentTime = 0; // Rewind the audio to the beginning
+      audio.play(); // Play the audio when any button is clicked
+      var sourceUrl = button.getAttribute("data-source");
+      console.log("Source URL:", sourceUrl);
+      // Redirect to the source URL
+      window.location.href = sourceUrl;
+    });
+  });
+</script>
+</body>
+</html>

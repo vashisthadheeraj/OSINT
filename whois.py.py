@@ -1,0 +1,25 @@
+import whois
+domain = input("Enter the domain Name: ")
+
+
+print("[+] Getting Whois info of the Target {} ...".format(domain)) 
+whois1 = whois.whois(domain)
+print("[+] WhoIs info found.")
+whois1.text
+print("Name: {}".format(whois1.domain))
+print("Registrar: {}".format(whois1.registrar))
+print("WhoIs Server: {}".format(whois1.whois_server))
+print("Referal URL: {}".format(whois1.referral_url))
+print("Domain Creation Date: {}".format(whois1.creation_date))
+print("Domain Expiry Date: {}".format(whois1.expiration_date))
+print("Domain Update Date: {}".format(whois1.updated_date))
+print("Domain Name Server: {}".format(whois1.name_servers))
+print("Domain Status: {}".format(whois1.status))
+print("Domain Emails: {}".format(whois1.emails))
+print("Domain Owner Name: {}".format(whois1.name))
+print("Domain Organisation: {}".format(whois1.org))
+print("Domain Owner Address: {}".format(whois1.address))
+print("Domain Owner City: {}".format(whois1.city))
+print("Domain Owner State: {}".format(whois1.state))
+print("Domain Owner ZIP Code: {}".format(whois1.registrant_postal_code))
+print("Domain Owner Country: {}".format(whois1.country))

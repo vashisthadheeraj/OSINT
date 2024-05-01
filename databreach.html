@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DNS Lookup</title>
+<link rel="stylesheet" href="styles.css">
+<!-- Add Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  body {
+    overflow: hidden; /* Prevent scrolling */
+  }
+
+  .container {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    background-image: url('hacker-image.jpg'); /* Replace 'hacker-image.jpg' with your image file */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: white; /* Adjust text color for better visibility */
+    /* background: #007bff; */
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Stretched to 100% */
+    /* max-width: 600px; Maximum width */
+    margin-bottom: 20px;
+    /* background-color: black; */
+  }
+  #search-form{
+    width: 70%;
+    /* background-color: orange; */
+  }
+
+  .search-input {
+    /* flex: 1; */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 50%;
+  }
+
+  #search-btn {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Google-like blue color */
+    color: white;
+    cursor: pointer;
+    margin-left: 10px; Add margin to separate from input
+  }
+
+  .search-btn i {
+    margin-right: 5px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+  }
+  
+  .footer-item {
+    color: white;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>DNS Lookup</h1>
+        <div class="search-container">
+            <form id="search-form" action="/search" method="post">
+                <input type="text" name="q" class="search-input" placeholder="Enter the Target Domain">
+                <button type="button" id="search-btn"><i class="fas fa-search"></i> Search</button>
+            </form>
+        </div>
+      </div>
+
+      <!-- Audio Element -->
+      <audio id="hack-sound" src="audio.mp3" preload="auto"></audio>
+      
+
+
+<script>
+  document.getElementById("search-btn").addEventListener("click", function() {
+    playHack();
+  });
+
+  function playHack() {
+    var audio = document.getElementById("hack-sound");
+    audio.currentTime = 0; // Rewind the audio to the beginning
+    audio.play(); // Play the audio when the button is clicked
+  }
+</script>
+</body>
+</html>
